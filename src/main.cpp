@@ -1,10 +1,20 @@
 #include <SFML/Graphics.hpp>
+#include<vector>
 
-unsigned int windowWidth = 1200;
+#include "./classes/GridBlock.hpp"
+#include "./debug/setupDebugBoxes.cpp"
+
+unsigned int windowWidth = 800;
 unsigned int windowHeight = 800;
 
 int main() {
   sf::RenderWindow window(sf::VideoMode(windowWidth, windowHeight), "Snake");
+
+  float BLOCKSIZE = ((float) windowWidth / 12.0);
+
+  std::vector<GridBlock> blocks;
+
+  setupDebugBoxes(blocks, BLOCKSIZE);
 
   while (window.isOpen()) {
     sf::Event event;
@@ -13,8 +23,13 @@ int main() {
         window.close();
       }
     }
+
+    window.clear();
+    for(GridBlock block : blocks) {
+      block.render(window);
+    }
     window.display();
   }
 
   return 0;
-}
+} 
