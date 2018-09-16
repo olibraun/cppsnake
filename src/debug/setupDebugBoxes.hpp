@@ -1,5 +1,4 @@
-#ifndef DEBUGBOXES
-#define DEBUGBOXES
+#pragma once
 
 #include<vector>
 
@@ -66,5 +65,3 @@ void setupDebugBoxes(std::vector<GridBlock>& blocks, float BLOCKSIZE) {
   block12.setColor(sf::Color::Cyan);
   blocks.push_back(block12);
 }
-
-#endif

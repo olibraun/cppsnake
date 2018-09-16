@@ -2,7 +2,7 @@
 #include<vector>
 
 #include "./classes/GridBlock.hpp"
-#include "./debug/setupDebugBoxes.cpp"
+#include "./debug/setupDebugBoxes.hpp"
 
 unsigned int windowWidth = 800;
 unsigned int windowHeight = 800;
