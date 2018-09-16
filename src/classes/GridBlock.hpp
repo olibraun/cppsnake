@@ -21,4 +21,6 @@ class GridBlock {
   GridBlock(float blocksize);
   void render(sf::RenderWindow &window);
   void setColor(sf::Color color);
+  void setGridPosition(int x, int y);
+  void printDebugInfo();
 };

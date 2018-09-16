@@ -1,7 +1,7 @@
 #include "GridBlock.hpp"
+#include<iostream>
 
 GridBlock::GridBlock() {
-
 }
 
 GridBlock::GridBlock(float blocksize) {
@@ -11,6 +11,8 @@ GridBlock::GridBlock(float blocksize) {
 void GridBlock::render(sf::RenderWindow &window) {
   sf::RectangleShape shape;
 
+  const sf::Vector2f sizevector{myBlockSize, myBlockSize};
+  shape.setSize(sizevector);
   shape.setFillColor(myColor);
   const float x = getRealXPosition();
   const float y = getRealYPosition();
@@ -29,4 +31,15 @@ float GridBlock::getRealXPosition(){
 
 float GridBlock::getRealYPosition(){
   return myGridY * myBlockSize;
+}
+
+void GridBlock::setGridPosition(int x, int y) {
+  myGridX = x;
+  myGridY = y;
+}
+
+void GridBlock::printDebugInfo() {
+  std::cout << "Block" << std::endl;
+  std::cout << "Grid position (x,y): " << myGridX << " , " << myGridY << std::endl;
+  std::cout << "Real position (x,y): " << getRealXPosition() << " , " << getRealYPosition() << std::endl;
 }
