@@ -22,5 +22,6 @@ class GridBlock {
   void render(sf::RenderWindow &window);
   void setColor(sf::Color color);
   void setGridPosition(int x, int y);
+  std::vector<int> getGridPosition();
   void printDebugInfo();
 };

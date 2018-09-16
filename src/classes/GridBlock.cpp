@@ -38,6 +38,13 @@ void GridBlock::setGridPosition(int x, int y) {
   myGridY = y;
 }
 
+std::vector<int> GridBlock::getGridPosition() {
+  std::vector<int> res;
+  res.push_back(myGridX);
+  res.push_back(myGridY);
+  return res;
+}
+
 void GridBlock::printDebugInfo() {
   std::cout << "Block" << std::endl;
   std::cout << "Grid position (x,y): " << myGridX << " , " << myGridY << std::endl;
