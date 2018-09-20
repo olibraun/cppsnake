@@ -13,10 +13,6 @@ int main() {
 
   float BLOCKSIZE = ((float) windowWidth / 12.0);
 
-  // std::vector<GridBlock> blocks;
-
-  // setupDebugBoxes(blocks, BLOCKSIZE);
-
   Snake player(BLOCKSIZE);
 
   while (window.isOpen()) {
