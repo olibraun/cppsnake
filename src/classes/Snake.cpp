@@ -52,3 +52,11 @@ void Snake::handleKeyboardInput(sf::Event& event) {
       break;
   }
 }
+
+void Snake::eatFood(Food& food) {
+  auto food_position = food.getGridPosition();
+  auto snake_position = this->getGridPosition();
+  if (food_position == snake_position) {
+    std::cout << "Nom nom" << std::endl;
+  }
+}

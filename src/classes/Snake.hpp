@@ -1,6 +1,7 @@
 #pragma once
 
 #include "GridBlock.hpp"
+#include "Food.hpp"
 
 class Snake : public GridBlock {
   private:
@@ -14,4 +15,5 @@ class Snake : public GridBlock {
   Snake(float blocksize);
   void update();
   void handleKeyboardInput(sf::Event& event);
+  void eatFood(Food& food);
 };
