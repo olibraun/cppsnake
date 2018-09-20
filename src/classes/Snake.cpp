@@ -9,7 +9,7 @@ myStepX(0),
 myStepY(0),
 myTimer(myTimerDefault)
 {
-  GridBlock::setColor(sf::Color::Green);
+  GridBlock::setColor(sf::Color::Red);
   GridBlock::setGridPosition(6, 6);
 }
 
