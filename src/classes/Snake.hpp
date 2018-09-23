@@ -2,6 +2,7 @@
 
 #include "GridBlock.hpp"
 #include "Food.hpp"
+#include <vector>
 
 class Snake : public GridBlock {
   private:
