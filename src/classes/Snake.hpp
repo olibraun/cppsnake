@@ -9,6 +9,7 @@ class Snake : public GridBlock {
   int myStepY;
   int myTimer;
   const static int myTimerDefault = 500;
+  std::vector<GridBlock> myTail;
 
   public:
   Snake();

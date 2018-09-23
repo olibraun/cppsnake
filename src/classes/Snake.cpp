@@ -7,7 +7,8 @@ Snake::Snake() {
 Snake::Snake(float blocksize) : GridBlock(blocksize),
 myStepX(0),
 myStepY(0),
-myTimer(myTimerDefault)
+myTimer(myTimerDefault),
+myTail()
 {
   GridBlock::setColor(sf::Color::Red);
   GridBlock::setGridPosition(6, 6);
