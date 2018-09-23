@@ -50,7 +50,7 @@ int main() {
 
     window.clear();
     player.update();
-    for(Food food : food_array) {
+    for(Food& food : food_array) {
       food.render(window);
       player.eatFood(food);
     }
