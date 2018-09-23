@@ -7,4 +7,5 @@ class Food : public GridBlock {
 
   public:
   Food(float blocksize);
+  void setRandomGridPosition();
 };

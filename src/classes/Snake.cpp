@@ -23,7 +23,6 @@ void Snake::update() {
 
     // This is the motion of the snake
     if(myTail.size() > 0) {
-      std::cout << "Ich bin drin???" << std::endl;
       // The head has already moved on to its next location
       // Now move the first piece in the tail to the previous position of the head
       // That location is still stored in the variable position_vector
@@ -35,11 +34,9 @@ void Snake::update() {
       // Now the second tailpiece needs to move to the position of the first,
       // the third to the place of the second, and so forth
       for(int i = 1; i < myTail.size(); i++) {
-        if(i != 1) {
-          current_pos = myTail[i-1].getGridPosition();
-        }
         next_pos = myTail[i].getGridPosition();
         myTail[i].setGridPosition(current_pos[0], current_pos[1]);
+        current_pos = next_pos;
       }
     }
 
@@ -88,7 +85,7 @@ void Snake::eatFood(Food& food) {
     myTail.push_back(tailblock);
 
     // Move the food to a new place
-    food.setGridPosition(1, 1);
+    food.setRandomGridPosition();
   }
 }
 
