@@ -50,3 +50,7 @@ void GridBlock::printDebugInfo() {
   std::cout << "Grid position (x,y): " << myGridX << " , " << myGridY << std::endl;
   std::cout << "Real position (x,y): " << getRealXPosition() << " , " << getRealYPosition() << std::endl;
 }
+
+float GridBlock::getBlockSize() {
+  return myBlockSize;
+}

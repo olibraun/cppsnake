@@ -24,4 +24,5 @@ class GridBlock {
   void setGridPosition(int x, int y);
   std::vector<int> getGridPosition();
   void printDebugInfo();
+  float getBlockSize();
 };
