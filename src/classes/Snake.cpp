@@ -71,11 +71,12 @@ void Snake::eatFood(Food& food) {
 
 void Snake::render(sf::RenderWindow &window) {
   std::cout << myTail.size() << std::endl;
-  // Render the head
-  GridBlock::render(window);
 
   // Render the tail
   for(GridBlock& piece_of_tail : myTail) {
     piece_of_tail.render(window);
   }
+
+  // Render the head
+  GridBlock::render(window);
 }
