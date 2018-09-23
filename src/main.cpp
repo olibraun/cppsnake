@@ -12,7 +12,7 @@ unsigned int windowHeight = 800;
 int main() {
   sf::RenderWindow window(sf::VideoMode(windowWidth, windowHeight), "Snake");
 
-  float BLOCKSIZE = ((float) windowWidth / 12.0);
+  const float BLOCKSIZE = ((float) windowWidth / 12.0);
 
   Snake player(BLOCKSIZE);
 
@@ -50,7 +50,7 @@ int main() {
 
     food.render(window);
     player.render(window);
-    
+
     window.display();
   }
 
