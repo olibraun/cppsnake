@@ -1,5 +1,5 @@
 #include "GridBlock.hpp"
-#include<iostream>
+#include <iostream>
 
 GridBlock::GridBlock() {
 }

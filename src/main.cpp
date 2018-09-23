@@ -1,5 +1,5 @@
 #include <SFML/Graphics.hpp>
-#include<vector>
+#include <vector>
 
 #include "./classes/GridBlock.hpp"
 #include "./debug/setupDebugBoxes.hpp"
