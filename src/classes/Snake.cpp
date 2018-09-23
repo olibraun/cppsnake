@@ -23,7 +23,7 @@ void Snake::update() {
     myTimer = myTimerDefault;
   }
   myTimer--;
-  std::cout << myStepX << " " << myStepY << std::endl;
+  //std::cout << myStepX << " " << myStepY << std::endl;
 }
 
 void Snake::handleKeyboardInput(sf::Event& event) {
@@ -58,6 +58,24 @@ void Snake::eatFood(Food& food) {
   auto food_position = food.getGridPosition();
   auto snake_position = this->getGridPosition();
   if (food_position == snake_position) {
-    std::cout << "Nom nom" << std::endl;
+    // Create a new piece for the tail
+    GridBlock tailblock(GridBlock::getBlockSize());
+    tailblock.setColor(sf::Color::Green);
+    tailblock.setGridPosition(3, 4);
+    myTail.push_back(tailblock);
+
+    // Move the food to a new place
+    food.setGridPosition(1, 1);
+  }
+}
+
+void Snake::render(sf::RenderWindow &window) {
+  std::cout << myTail.size() << std::endl;
+  // Render the head
+  GridBlock::render(window);
+
+  // Render the tail
+  for(GridBlock& piece_of_tail : myTail) {
+    piece_of_tail.render(window);
   }
 }

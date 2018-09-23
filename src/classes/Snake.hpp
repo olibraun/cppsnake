@@ -17,4 +17,5 @@ class Snake : public GridBlock {
   void update();
   void handleKeyboardInput(sf::Event& event);
   void eatFood(Food& food);
+  void render(sf::RenderWindow &window) override;
 };
