@@ -18,15 +18,8 @@ int main() {
 
   std::vector<Food> food_array;
 
-  // Distribute food on the grid (make this one random piece of food later)
-  Food* food1 = new Food(BLOCKSIZE);
-  food1->setGridPosition(2, 5);
-  food_array.push_back(*food1);
-  delete food1;
-
-  Food food2(BLOCKSIZE);
-  food2.setGridPosition(8, 7);
-  food_array.push_back(food2);
+  Food food(BLOCKSIZE);
+  food.setGridPosition(8, 7);
 
   while (window.isOpen()) {
     sf::Event event;
@@ -50,10 +43,8 @@ int main() {
 
     window.clear();
     player.update();
-    for(Food& food : food_array) {
-      food.render(window);
-      player.eatFood(food);
-    }
+    food.render(window);
+    player.eatFood(food);
     player.render(window);
     window.display();
   }
