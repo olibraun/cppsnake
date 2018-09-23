@@ -15,7 +15,7 @@ myTail()
 }
 
 void Snake::update() {
-  auto position_vector = GridBlock::getGridPosition();
+  std::vector<int> position_vector = GridBlock::getGridPosition();
   int xpos = position_vector[0];
   int ypos = position_vector[1];
   if(myTimer <= 0) {
@@ -27,8 +27,8 @@ void Snake::update() {
       // Now move the first piece in the tail to the previous position of the head
       // That location is still stored in the variable position_vector
       // Before that, store the current location of the first tailpiece
-      auto current_pos = myTail[0].getGridPosition();
-      auto next_pos = myTail[0].getGridPosition();
+      std::vector<int> current_pos = myTail[0].getGridPosition();
+      std::vector<int> next_pos = myTail[0].getGridPosition();
       myTail[0].setGridPosition(position_vector[0], position_vector[1]);
   
       // Now the second tailpiece needs to move to the position of the first,
@@ -47,7 +47,7 @@ void Snake::update() {
 }
 
 void Snake::handleKeyboardInput(sf::Event& event) {
-  auto keycode = event.key.code;
+  sf::Keyboard::Key keycode = event.key.code;
   switch(keycode) {
     case sf::Keyboard::Right:
       myStepX = 1;
@@ -75,8 +75,8 @@ void Snake::handleKeyboardInput(sf::Event& event) {
 }
 
 void Snake::eatFood(Food& food) {
-  auto food_position = food.getGridPosition();
-  auto snake_position = this->getGridPosition();
+  std::vector<int> food_position = food.getGridPosition();
+  std::vector<int> snake_position = this->getGridPosition();
   if (food_position == snake_position) {
     // Create a new piece for the tail
     GridBlock tailblock(GridBlock::getBlockSize());
