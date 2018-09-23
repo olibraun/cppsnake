@@ -1,7 +1,6 @@
 #pragma once
 
 #include <vector>
-
 #include "../classes/GridBlock.hpp"
 
 void setupDebugBoxes(std::vector<GridBlock>& blocks, float BLOCKSIZE) {
