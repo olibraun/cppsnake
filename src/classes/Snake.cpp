@@ -20,6 +20,29 @@ void Snake::update() {
   int ypos = position_vector[1];
   if(myTimer <= 0) {
     GridBlock::setGridPosition(xpos + myStepX, ypos + myStepY);
+
+    // This is the motion of the snake
+    if(myTail.size() > 0) {
+      std::cout << "Ich bin drin???" << std::endl;
+      // The head has already moved on to its next location
+      // Now move the first piece in the tail to the previous position of the head
+      // That location is still stored in the variable position_vector
+      // Before that, store the current location of the first tailpiece
+      auto current_pos = myTail[0].getGridPosition();
+      auto next_pos = myTail[0].getGridPosition();
+      myTail[0].setGridPosition(position_vector[0], position_vector[1]);
+  
+      // Now the second tailpiece needs to move to the position of the first,
+      // the third to the place of the second, and so forth
+      for(int i = 1; i < myTail.size(); i++) {
+        if(i != 1) {
+          current_pos = myTail[i-1].getGridPosition();
+        }
+        next_pos = myTail[i].getGridPosition();
+        myTail[i].setGridPosition(current_pos[0], current_pos[1]);
+      }
+    }
+
     myTimer = myTimerDefault;
   }
   myTimer--;
@@ -61,7 +84,7 @@ void Snake::eatFood(Food& food) {
     // Create a new piece for the tail
     GridBlock tailblock(GridBlock::getBlockSize());
     tailblock.setColor(sf::Color::Green);
-    tailblock.setGridPosition(3, 4);
+    tailblock.setGridPosition(food_position[0], food_position[1]);
     myTail.push_back(tailblock);
 
     // Move the food to a new place
