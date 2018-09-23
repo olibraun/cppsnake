@@ -41,11 +41,16 @@ int main() {
       }
     }
 
-    window.clear();
+    // Player update
     player.update();
-    food.render(window);
     player.eatFood(food);
+
+    // Rendering
+    window.clear();
+
+    food.render(window);
     player.render(window);
+    
     window.display();
   }
 
