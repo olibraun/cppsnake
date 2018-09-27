@@ -5,8 +5,8 @@
 #include "./classes/Snake.hpp"
 #include "./classes/Food.hpp"
 
-unsigned int windowWidth = 800;
-unsigned int windowHeight = 800;
+const unsigned int windowWidth = 800;
+const unsigned int windowHeight = 800;
 
 int main() {
   sf::RenderWindow window(sf::VideoMode(windowWidth, windowHeight), "Snake");
