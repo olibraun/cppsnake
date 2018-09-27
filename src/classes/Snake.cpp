@@ -1,5 +1,6 @@
 #include "Snake.hpp"
 #include <iostream>
+#include "../misc/global_constants.hpp"
 
 Snake::Snake() {
 }
@@ -18,6 +19,21 @@ void Snake::update() {
   std::vector<int> position_vector = GridBlock::getGridPosition();
   int xpos = position_vector[0];
   int ypos = position_vector[1];
+
+  // "Wrap around" behavior: If the snake passes the right end of the screen, it is set to the left etc.
+  std::cout << "Test" << std::endl;
+  if (xpos > global::blocknumber && myStepX > 0) {
+    xpos = 0;
+  } else if (xpos < 0 && myStepX < 0) {
+    xpos = global::blocknumber - 1;
+  } else if (ypos < 0 && myStepY < 0) {
+    ypos = global::blocknumber;
+  } else if (ypos > global::blocknumber && myStepY > 0) {
+    ypos = -1;
+  }
+
+  GridBlock::setGridPosition(xpos, ypos);
+
   if(myTimer <= 0) {
     GridBlock::setGridPosition(xpos + myStepX, ypos + myStepY);
 
