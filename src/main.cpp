@@ -4,20 +4,16 @@
 #include "./debug/setupDebugBoxes.hpp"
 #include "./classes/Snake.hpp"
 #include "./classes/Food.hpp"
-
-const unsigned int windowWidth = 800;
-const unsigned int windowHeight = 800;
+#include "./misc/global_constants.hpp"
 
 int main() {
-  sf::RenderWindow window(sf::VideoMode(windowWidth, windowHeight), "Snake");
+  sf::RenderWindow window(sf::VideoMode(global::windowWidth, global::windowHeight), "Snake");
 
-  const float BLOCKSIZE = ((float) windowWidth / 12.0);
-
-  Snake player(BLOCKSIZE);
+  Snake player(global::BLOCKSIZE);
 
   std::vector<Food> food_array;
 
-  Food food(BLOCKSIZE);
+  Food food(global::BLOCKSIZE);
   food.setGridPosition(8, 7);
 
   while (window.isOpen()) {

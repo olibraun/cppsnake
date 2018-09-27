@@ -1,5 +1,6 @@
 #include "Food.hpp"
 #include <iostream>
+#include "../misc/global_constants.hpp"
 
 Food::Food(float blocksize) : 
 GridBlock(blocksize) {
@@ -8,7 +9,7 @@ GridBlock(blocksize) {
 
 void Food::setRandomGridPosition() {
   int a, b;
-  a = rand() % 12;
-  b = rand() % 12;
+  a = rand() % global::blocknumber;
+  b = rand() % global::blocknumber;
   GridBlock::setGridPosition(a, b);
 }
