@@ -43,7 +43,6 @@ void Snake::update() {
     myTimer = myTimerDefault;
   }
   myTimer--;
-  //std::cout << myStepX << " " << myStepY << std::endl;
 }
 
 void Snake::handleKeyboardInput(sf::Event& event) {
