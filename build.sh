@@ -4,6 +4,9 @@ SECONDS=0
 
 echo "Starting to build Snake."
 
+# Create directory ./bin if it does not yet exist
+mkdir -p bin
+
 # Compile primary folder in one process
 (
   g++ -O2 -c ./src/*.cpp
